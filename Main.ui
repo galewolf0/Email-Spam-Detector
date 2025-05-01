@@ -210,32 +210,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="processingMessage">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>472</y>
-       <width>748</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>13</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(254, 232, 1)</string>
-     </property>
-     <property name="text">
-      <string>Processing...</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
    </widget>
   </widget>
  </widget>

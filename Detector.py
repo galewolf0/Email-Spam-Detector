@@ -13,11 +13,9 @@ class Ui_Main(QtWidgets.QMainWindow):
         loadUi("Main.ui", self)
         
         #hiding elements and making them uneditable
-        self.processingMessage.setEnabled(False)
         self.resultMessage.setEnabled(False)
         self.spamMessage.setEnabled(False)
         self.notSpamMessage.setEnabled(False)
-        self.processingMessage.hide()
         self.spamMessage.hide()
         self.notSpamMessage.hide()
 
@@ -25,18 +23,8 @@ class Ui_Main(QtWidgets.QMainWindow):
         self.scanButton.clicked.connect(lambda: self.scan())
         self.clearButton.clicked.connect(lambda: self.clear())
 
-    def scan(self):
-        #hiding and unhiding elements and processing
-        self.resultMessage.hide()
-        self.processingMessage.show()
-        self.processing()
-
     #Processing
-    def processing(self):
-        #hiding and unhiding elements
-        self.resultMessage.hide()
-        self.processingMessage.show()
-
+    def scan(self):
         #loding the pickle file
         with open("model","rb") as f:
             model = pickle.load(f)
@@ -50,23 +38,23 @@ class Ui_Main(QtWidgets.QMainWindow):
         prediction = model.predict(new_email_vectorized)
 
         #Displaying the result
+        self.resultMessage.hide()
+        self.scanButton.setEnabled(False)
         if prediction[0] == 1:
-            self.processingMessage.hide()
             self.spamMessage.show()
         else:
-            self.processingMessage.hide()
             self.notSpamMessage.show()
 
     #What happens when clear button is clicked
     def clear(self):
         #hiding and unhiding elements
-        self.processingMessage.hide()
         self.spamMessage.hide()
         self.notSpamMessage.hide()
         self.resultMessage.show()
 
         #clearing the text box
         self.toCheck.setPlainText("")
+        self.scanButton.setEnabled(True)
 
 
 #main
