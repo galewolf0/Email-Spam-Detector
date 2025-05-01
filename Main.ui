@@ -95,6 +95,9 @@
        <height>365</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(254, 232, 1)</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="spamMessage">
      <property name="geometry">
@@ -113,7 +116,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(0, 255, 204)</string>
+      <string notr="true">color: rgb(255, 0, 0)</string>
      </property>
      <property name="text">
       <string>The email is a SPAM.</string>
@@ -148,7 +151,7 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="clearButton">
      <property name="geometry">
       <rect>
        <x>284</x>
@@ -164,7 +167,7 @@
       <string>Clear</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="scanButton">
      <property name="geometry">
       <rect>
        <x>384</x>
@@ -202,6 +205,32 @@
      </property>
      <property name="text">
       <string>The Result will be displayed here.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="processingMessage">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>472</y>
+       <width>748</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(254, 232, 1)</string>
+     </property>
+     <property name="text">
+      <string>Processing...</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
